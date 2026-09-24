@@ -19,4 +19,17 @@ public class Botões : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+    public void PassarRound()
+    {
+        // buscar o método ProximoRound() do script GerentedoPlayer e chamar ele
+        GerentedoPlayer gerentedoPlayer = Object.FindFirstObjectByType<GerentedoPlayer>();
+        if (gerentedoPlayer != null)
+        {
+            gerentedoPlayer.ProximoRound();
+        }
+        else
+        {
+            Debug.LogWarning("GerentedoPlayer não encontrado na cena.");
+        }
+    }
 }

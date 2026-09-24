@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 7619725673090766203}
   - component: {fileID: 7608321258163692987}
   - component: {fileID: 3883751131098191065}
+  - component: {fileID: -7547570135253327699}
   m_Layer: 0
-  m_Name: Carta teste
+  m_Name: "Carta Padr\xE3o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,12 +84,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2169606500876301731, guid: 4382b18de4ab572498c59978b4df3e64, type: 3}
+  m_Sprite: {fileID: -422401362006371055, guid: cd84c7d0eac25b24180489f6c8ba3da6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 11.34, y: 17.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -132,7 +133,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 11.34, y: 17.73}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 11.34, y: 17.73}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -151,13 +152,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234d21c8ab348f44c89e08ff381d4717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CartaStatus
-  HP: 30
-  MaxHP: 30
-  DF: 10
-  Pontos: 15
-  ErroAtack: 1
+  HP: 0
+  MaxHP: 0
+  DF: 0
+  Pontos: 0
+  ErroAtack: 0
   AtaqueMuitoFraco: 0
-  AtaqueFraco: 10
-  AtaqueMedio: 25
-  AtaqueForte: 40
+  AtaqueFraco: 0
+  AtaqueMedio: 0
+  AtaqueForte: 0
   IsDead: 0
+--- !u!114 &-7547570135253327699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660326566627117782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c608ac46b4d1a84cbff7b9d0d64dc86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Card
+  cardId: 
+  database: {fileID: 11400000, guid: b0f584ee84d33fa46b3564d65fde1538, type: 2}
