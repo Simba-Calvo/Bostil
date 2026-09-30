@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc0a324fd4f3d1846a99d40fde6c4677, type: 3}
-  m_Name: New Card Data
+  m_Name: 0005
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  Id: 0002
-  DisplayName: Trupe do Wick
-  Sprite: {fileID: 0}
-  HP: 275
-  MaxHP: 275
-  DF: 150
-  Pontos: 35
-  PossuiAtaqueMuitoFraco: 1
-  AtaqueMuitoFraco: 20
-  AtaqueFraco: 50
-  AtaqueMedio: 100
-  AtaqueForte: 180
+  Id: 0005
+  DisplayName: Metal Sonic
+  Sprite: {fileID: 1751448292308328580, guid: 79764b33205b62f47b54217db8778a0a, type: 3}
+  HP: 0
+  MaxHP: 0
+  DF: 250
+  Pontos: 50
+  PossuiAtaqueMuitoFraco: 0
+  AtaqueMuitoFraco: 0
+  AtaqueFraco: 100
+  AtaqueMedio: 175
+  AtaqueForte: 250
   Abilities: []
