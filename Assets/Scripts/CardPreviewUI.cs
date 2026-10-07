@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class CardPreviewUI : MonoBehaviour
@@ -20,11 +21,49 @@ public class CardPreviewUI : MonoBehaviour
     [Header("Habilidades")]
     public TMP_Text abilitiesText;
 
+    private RectTransform previewRect;
+    private Canvas parentCanvas;
+
     private void Start()
     {
         if (previewPanel != null)
         {
             previewPanel.SetActive(false);
+            previewRect = previewPanel.GetComponent<RectTransform>();
+            parentCanvas = previewPanel.GetComponentInParent<Canvas>();
+        }
+    }
+
+    private void Update()
+    {
+        // Fecha o preview ao clicar fora do previewPanel (botão esquerdo)
+        if (previewPanel != null && previewPanel.activeInHierarchy)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector2 screenPos = Input.mousePosition;
+                Camera cam = null;
+                if (parentCanvas != null && parentCanvas.renderMode != RenderMode.ScreenSpaceOverlay)
+                {
+                    cam = parentCanvas.worldCamera;
+                }
+
+                bool inside = false;
+                if (previewRect != null)
+                {
+                    inside = RectTransformUtility.RectangleContainsScreenPoint(previewRect, screenPos, cam);
+                }
+                else if (EventSystem.current != null)
+                {
+                    // fallback: se o ponteiro não está sobre nenhum elemento UI, considerar como clique fora
+                    inside = EventSystem.current.IsPointerOverGameObject();
+                }
+
+                if (!inside)
+                {
+                    ClosePreview();
+                }
+            }
         }
     }
 
@@ -97,7 +136,7 @@ public class CardPreviewUI : MonoBehaviour
                 : 0;
 
             abilitiesText.text = count == 0
-                ? "Nenhuma habilidade cadastrada."
+                ? "Sem habilidade"
                 : "Habilidades cadastradas: " + count;
         }
     }

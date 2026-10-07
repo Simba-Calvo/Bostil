@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   Id: 0003
   DisplayName: Pepsiman
-  Sprite: {fileID: -3746616751609218744, guid: 85a4d65d5d9d8a948b00f33babaca674, type: 3}
+  Sprite: {fileID: 2712090704800160770, guid: a8b494e3505da334082eef816767fc56, type: 3}
+  Rarity: 2
   HP: 300
   MaxHP: 300
   DF: 150

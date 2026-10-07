@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   Id: 0005
   DisplayName: Metal Sonic
-  Sprite: {fileID: 1751448292308328580, guid: 79764b33205b62f47b54217db8778a0a, type: 3}
+  Sprite: {fileID: -2892003348483208747, guid: 2c7363db63444e544aa08a330bae900c, type: 3}
+  Rarity: 0
   HP: 0
   MaxHP: 0
   DF: 250

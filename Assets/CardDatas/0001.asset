@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   Id: 0001
   DisplayName: Nerd Fudido
-  Sprite: {fileID: -4990975367803106832, guid: 474993d1056803945aebb4de4e452140, type: 3}
+  Sprite: {fileID: 5682626330465709728, guid: 87d0195934906544d9fe9804b7dc28b6, type: 3}
+  Rarity: 0
   HP: 30
   MaxHP: 30
   DF: 10

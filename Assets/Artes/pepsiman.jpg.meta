@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 42e0b7661bb9e6f4f9b87f2968503268
+guid: a8b494e3505da334082eef816767fc56
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 518632852375041761
-    second: 20260711_171819_0
+      213: 2712090704800160770
+    second: pepsiman_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 20260711_171819_0
+      name: pepsiman_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2304
-        height: 3468
+        width: 1343
+        height: 2045
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1e679a6d4dd823700800000000000000
-      internalID: 518632852375041761
+      spriteID: 20c9042702843a520800000000000000
+      internalID: 2712090704800160770
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      20260711_171819_0: 518632852375041761
+      pepsiman_0: 2712090704800160770
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

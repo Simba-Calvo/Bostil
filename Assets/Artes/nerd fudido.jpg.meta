@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cd84c7d0eac25b24180489f6c8ba3da6
+guid: 87d0195934906544d9fe9804b7dc28b6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -422401362006371055
-    second: branco_0
+      213: 5682626330465709728
+    second: nerd fudido_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: branco_0
+      name: nerd fudido_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11518f00334532af0800000000000000
-      internalID: -422401362006371055
+      spriteID: 0aea0ba2a8ebcde40800000000000000
+      internalID: 5682626330465709728
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      branco_0: -422401362006371055
+      nerd fudido_0: 5682626330465709728
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

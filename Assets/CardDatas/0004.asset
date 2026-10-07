@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   Id: 0004
   DisplayName: Pintinhos
-  Sprite: {fileID: 518632852375041761, guid: 42e0b7661bb9e6f4f9b87f2968503268, type: 3}
+  Sprite: {fileID: 733005926305522610, guid: 9a9edca55e5ed8f4e9aeee34d502177c, type: 3}
+  Rarity: 2
   HP: 10
   MaxHP: 10
   DF: 500

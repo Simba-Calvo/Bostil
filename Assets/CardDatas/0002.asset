@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   Id: 0002
   DisplayName: Trupe do Wick
-  Sprite: {fileID: 188559011778538071, guid: 6a6d30a7992b8bf4eb4fc18e95ae6715, type: 3}
+  Sprite: {fileID: -6134468847503575895, guid: d8af3e679c45e004c977c9ee46cfdf42, type: 3}
+  Rarity: 2
   HP: 275
   MaxHP: 275
   DF: 150
