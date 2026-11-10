@@ -10,7 +10,7 @@ public enum CardRarity
     Lendario,
     Divino,
     Celestial,
-    Outra
+    EX
 }
 
 [CreateAssetMenu(menuName = "Cards/CardData")]
@@ -20,7 +20,13 @@ public class CardData : ScriptableObject
     public string Id;
 
     public string DisplayName;
+
+    [Header("Sprites")]
+    [Tooltip("Sprite principal usado no campo de batalha e no preview detalhado.")]
     public Sprite Sprite;
+
+    [Tooltip("Sprite reduzido usado nos slots de seleção.")]
+    public Sprite SelectionSprite;
 
     [Header("Raridade")]
     public CardRarity Rarity = CardRarity.Comum;

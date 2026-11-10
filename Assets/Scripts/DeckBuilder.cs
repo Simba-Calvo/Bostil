@@ -13,6 +13,9 @@ public class DeckBuilder : MonoBehaviour
     [SerializeField] private Transform cardListContent;
     [SerializeField] private Button cardButtonPrefab;
 
+    [Tooltip("Nome do objeto Image usado para exibir o sprite reduzido.")]
+    [SerializeField] private string selectionSpriteObjectName = "CardSprite";
+
     [Header("Deck")]
     [SerializeField] private Button[] deckSlots;
     [SerializeField] private TMP_Text deckCount;
@@ -104,6 +107,8 @@ public class DeckBuilder : MonoBehaviour
                 cardButtonPrefab,
                 cardListContent
             );
+
+            ConfigureSelectionSprite(newButton, card);
 
             // Configura o texto
             TMP_Text buttonText =
@@ -214,17 +219,28 @@ public class DeckBuilder : MonoBehaviour
 
         if (IsHighRarity(card.Rarity))
         {
-            // não pode duplicar cartas dessas raridades
+             // Cartas de raridade alta não podem ser duplicadas.
             if (CountCardInDeck(id) > 0)
             {
-                Debug.LogWarning("Cartas " + card.Rarity + " não podem ter duplicatas: " + id);
+                Debug.LogWarning(
+                    "Cartas " +
+                    card.Rarity +
+                    " não podem ter duplicatas: " +
+                    id
+                );
+
                 return false;
             }
 
-            int currentHigh = CountHighRarityInDeck();
-            if (currentHigh >= maxHighRarityCards)
+            if (HasReachedHighRarityLimit(card.Rarity))
             {
-                Debug.LogWarning("Limite atingido para cartas de raridade Lendário+ (" + maxHighRarityCards + ")");
+                Debug.LogWarning(
+                    "Limite atingido para cartas " +
+                    card.Rarity +
+                    ": " +
+                    GetHighRarityLimit(card.Rarity)
+                );
+
                 return false;
             }
         }
@@ -232,9 +248,17 @@ public class DeckBuilder : MonoBehaviour
         {
             int copies = CountCardInDeck(id);
             int limit = GetPerCardLimit(card.Rarity);
+
             if (copies >= limit)
             {
-                Debug.LogWarning("Limite de cópias atingido para " + card.DisplayName + " (" + limit + ")");
+                Debug.LogWarning(
+                    "Limite de cópias atingido para " +
+                    card.DisplayName +
+                    " (" +
+                    limit +
+                    ")"
+                );
+
                 return false;
             }
         }
@@ -360,6 +384,8 @@ public class DeckBuilder : MonoBehaviour
                     Destroy(trigger);
                 }
             }
+
+            ConfigureSelectionSprite(slot, card);
         }
     }
 
@@ -395,5 +421,74 @@ public class DeckBuilder : MonoBehaviour
     public void OnSaveButtonClicked()
     {
         SaveDeck();
+    }
+
+    private Image FindSelectionImage(Button button)
+    {
+        if (button == null)
+            return null;
+
+        Image[] images =
+            button.GetComponentsInChildren<Image>(true);
+
+        for (int i = 0; i < images.Length; i++)
+        {
+            Image image = images[i];
+
+            if (image.gameObject == button.gameObject)
+                continue;
+
+            if (image.gameObject.name == selectionSpriteObjectName)
+                return image;
+        }
+
+        return null;
+    }
+
+    private void ConfigureSelectionSprite(Button button, CardData card)
+    {
+        Image selectionImage = FindSelectionImage(button);
+
+        if (selectionImage == null)
+            return;
+
+        Sprite sprite = null;
+
+        if (card != null)
+        {
+            sprite = card.SelectionSprite != null
+                ? card.SelectionSprite
+                : card.Sprite;
+        }
+
+        selectionImage.sprite = sprite;
+        selectionImage.enabled = sprite != null;
+        selectionImage.preserveAspect = true;
+    }
+
+    private int GetHighRarityLimit(CardRarity rarity)
+    {
+        switch (rarity)
+        {
+            case CardRarity.Lendario:
+                return maxLendarias;
+
+            case CardRarity.Divino:
+                return maxDivinas;
+
+            case CardRarity.Celestial:
+                return maxCelestiais;
+
+            default:
+                return 0;
+        }
+    }
+
+    private bool HasReachedHighRarityLimit(CardRarity rarity)
+    {
+        int limit = GetHighRarityLimit(rarity);
+
+        return limit > 0 &&
+               CountRarityInDeck(rarity) >= limit;
     }
 }
